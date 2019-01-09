@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+function pushd () {
+    command pushd "$@" > /dev/null
+}
+
+function popd () {
+    command popd "$@" > /dev/null
+}
+
+function configure {
+    mkdir -p build
+    pushd build
+    cmake ../
+    popd
+}
+
+function config {
+    configure
+}
+
+function build {
+    pushd build
+    make
+    popd 
+}
+
+
+function run {
+    pushd build/modules
+    declare -i FAILED=0
+    for D in */ 
+    do
+        D=${D%/}
+        printf "\n$D:\n"
+        ./$D/$D
+        FAILED+=$?
+    done
+    popd
+    exit $FAILED
+}
+
+if [ -z "$1" ];
+then 
+    configure
+    build
+    run;
+else
+    $1;
+fi
