@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# Vim
+*.swp
+
 # Build output folder
 build/
