@@ -6,4 +6,12 @@ set(SOURCES
     main.cpp
 )
 
+include_directories(
+    ../external/googletest/googletest/include
+    ../external/googletest/googlemock/include
+)
+
 add_executable(test ${SOURCES})
+
+target_link_libraries(test gtest)
+
