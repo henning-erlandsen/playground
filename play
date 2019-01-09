@@ -28,13 +28,16 @@ function build {
 
 function run {
     pushd build/modules
+    declare -i FAILED=0
     for D in */ 
     do
         D=${D%/}
         printf "\n$D:\n"
         ./$D/$D
+        FAILED+=$?
     done
-    popd 
+    popd
+    exit $FAILED
 }
 
 if [ -z "$1" ];
