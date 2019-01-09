@@ -3,20 +3,6 @@ Prerequisites
 =============
 - CMake 2.8
 
-Setup
-=====
-
-```
-mkdir build
-cd build
-cmake ../
-```
-
-Build
-=====
-
-```
-cd build
-make
-```
-
+How to
+======
+```.play``` Will configure, build and run every module
