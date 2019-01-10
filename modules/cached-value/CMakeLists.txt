@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(test)
+project(cached-value)
 
 set(SOURCES
     main.cpp
+    test/cached-value-test.cpp
 )
 
 include_directories(
@@ -11,7 +12,7 @@ include_directories(
     ../external/googletest/googlemock/include
 )
 
-add_executable(test ${SOURCES})
+add_executable(cached-value ${SOURCES})
 
-target_link_libraries(test gtest)
+target_link_libraries(cached-value gtest)
 
