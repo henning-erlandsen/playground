@@ -36,3 +36,4 @@
 
 # Build output folder
 build/
+compile_commands.json
