@@ -8,6 +8,7 @@ set(SOURCES
 )
 
 include_directories(
+    .
     ../external/googletest/googletest/include
     ../external/googletest/googlemock/include
 )
